@@ -1,0 +1,65 @@
+﻿/* *****************************************************************************
+// Non-localizable resource description for the JHP_Menu ARCHICAD Add-On
+// API Development Kit 22
+//
+// Started on 05/21/2019 at 11:11am by CGilmer
+//
+// *****************************************************************************
+
+#include "ResourceIDs.h"
+
+/* TODO: replace the first ID with your developer ID and the second ID with */
+/*       your local ID                                                      */
+
+'MDID' 32500 "Add-On Identifier" {
+	625305189
+	3302835678
+}
+
+'GICN'	32501 "JHPWallCheckerSmall SVG Icon"{
+	"JHPWallCheckerSmall"
+}
+
+'GICN'	32600 "JHPLogo SVG Icon"{
+	"JHPLogo"
+}
+
+'GICN'	32601 "JHPPickWallAngle SVG Icon" {
+	"JHPPickWallAngle"
+}
+
+'GICN'	32602 "JHPRemoveWallAngle SVG Icon" {
+	"JHPRemoveWallAngle"
+}
+
+'GICN'	32603 "JHPFreeForReserve SVG Icon" {
+	"JHPFreeForReserve"
+}
+
+'GICN'	32604 "JHPReserved SVG Icon" {
+	"JHPReserved"
+}
+
+'GICN'	32605 "JHPReservedByOther SVG Icon" {
+	"JHPReservedByOther"
+}
+
+'GICN'	32606 "JHPMetalSmall SVG Icon" {
+	"JHPMetalSmall"
+}
+
+'GICN'	32607 "JHPWoodRoughSmall SVG Icon" {
+	"JHPWoodRoughSmall"
+}
+
+'GICN'	32608 "JHPWoodFineSmall SVG Icon" {
+	"JHPWoodFineSmall"
+}
+
+'GICN'	32609 "JHPHiddenSmall SVG Icon" {
+	"JHPHiddenSmall"
+}
+
+'GICN'	32610 "JHPShownSmall SVG Icon" {
+	"JHPShownSmall"
+}

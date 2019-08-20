@@ -1,0 +1,144 @@
+﻿// *****************************************************************************
+// Graphisoft Resource Compiler code for 'JHP Menu' Add-On
+// API Development Kit 22
+//
+// Started on 05/21/2019 at 11:11am by CGilmer
+//
+// *****************************************************************************
+
+/* SEE THE MENU PAGE IN THE API DOCS FOR CODES TO ALLOW MENU ITEMS IN OTHER AREAS LIKE BELOW ^XX*/
+
+#include "ResourceIDs.h"
+
+'STR#' 32000 "Add-on Name and Description" {
+/* [  1] */		"JHP_Menu"
+/* [  2] */		"Started on 05/21/2019 at 11:11am by CGilmer"
+}
+
+'STR#' 32500	"Menu strings" {
+/* [   ] */			"JHP"
+/* [   ] */ 			"Text"
+/* [  1] */ 				"All Uppercase^EL^EW^E3^E"
+/* [  2] */ 				"All Lowercase^EL^EW^E3^E"
+}
+
+'STR#' 32501	"Menu strings" {
+/* [   ] */			"JHP"
+/* [   ] */ 			"Wall Checker^32501^EL^EW^E3^ED"
+}
+
+'STR#' 32502	"Menu strings" {
+/* [   ] */			"JHP"
+/* [   ] */				"Links"
+/* [  1] */ 				"IBC Online^EL^EW^E3^ED"
+/* [  2] */ 				"UL Online^EL^EW^E3^E"
+/* [  3] */ 				"Fair Housing Act Design Manual^EL^EW^E3^E"
+/* [  4] */ 				"City of Dallas Parking Handbook^EL^EW^E3^E"				
+}
+
+'STR#' 32503	"Menu strings" {
+/* [   ] */			"JHP"
+/* [   ] */				"Standards"
+/* [  1] */ 				"JHP Design Manual^EL^EW^E3^E"
+/* [  2] */ 				"JHP Best Practices^EL^EW^E3^E"
+/* [  3] */ 				"Dimensions 101^EL^EW^E3^E"
+/* [  4] */ 				"JHP Logos^EL^EW^E3^E"
+}
+
+'STR#' 32504	"Menu strings" {
+/* [   ] */			"JHP"
+/* [   ] */				"Office"
+/* [  1] */ 				"Oce Plotwave 500 Manual^EL^EW^E3^E"
+}
+
+'STR#' 32505	"Menu strings" {
+/* [   ] */			"JHP"
+/* [   ] */				"Dev Tools"
+/* [  1] */ 				"Push SOURCE code to user TOOLS"
+}
+
+'STR#' 32506	"Menu strings" {
+/* [   ] */			"JHP"
+/* [   ] */				"Help"
+/* [  1] */					"Slack^EL^EW^E3^E"
+/* [  2] */					"About^EL^EW^E3^E"
+}
+
+'STR#' ID_MENU_PROMPT_STRINGS "Status bar strings" {
+/* [  1] */		"JHP_Menu"
+}
+
+///WALL CHECKER DIALOGS INFORMATION BELOW 32600-32699********
+
+'STR#' 32600	"Prompt strings" {
+/* [   ] */			"JHP"
+/* [  1] */ 			"Open Wall Checker Settings Dialog"
+}
+
+'GDLG' 32600 Modal			40		0		500		250		"JHP Wall Checker Settings" {
+/* [  1] */ Button			430		220		60		20		LargePlain	"OK"
+/* [  2] */ Button			1000	170		60		20		LargePlain	"Cancel"
+/* [  3] */ GroupBox		10		5		100		190		LargePlain	Primary "Bypass Angles"
+/* [  4] */ SingleSelList	20		55		80		130		SmallPlain	NoPartialItems VScroll 16 
+/* [  5] */ IconButton		20		25		36		24		32601 /* pick button*/		noFrame
+/* [  6] */ IconButton		64		25		36		24		32602 /* remove button*/	noFrame
+/* [  7] */ GroupBox		120		5		180		85		LargePlain	Primary "Length Precision"
+/* [  8] */ Slider			125		50		170		30		1	0	2	TopLeft
+/* [  9] */ Icon			130		33		18		18		32606 /* metal - decimal*/
+/* [ 10] */ Icon			200		33		18		18		32607 /* wood rough - 8th*/
+/* [ 11] */ Icon			272		33		18		18		32608 /* wood fine - 4th */
+/* [ 12] */ GroupBox		10		198		340		45		LargePlain	Primary "Properties/Classifications"
+/* [ 13] */ LeftText		16		218		60		18		LargePlain "Teamwork:"
+/* [ 14] */ LeftText		100		218		246		18		SmallPlain "Unknown"
+/* [ 15] */ Icon			79		215		18		18		32603 /* free */
+/* [ 16] */ Icon			79		215		18		18		32604 /* reserved */
+/* [ 17] */ Icon			79		215		18		18		32605 /* locked */
+/* [ 18] */ Button			360		220		60		20		LargePlain	"Reserve"
+/* [ 19] */ LeftText		120		100		340		90		LargePlain	"Decription"
+/* [ 20] */ GroupBox		310		5		60		55		LargePlain	Primary "On/Off"
+/* [ 21] */ IconButton		320		20		40		30		32609 /* master on */ noFrame
+/* [ 22] */ IconButton		320		20		40		30		32610 /* master off */ noFrame
+/* [ 23] */ Icon			426		10		64		64		32600 /* JHP */
+}
+
+'DLGH'  32600  DLG_32600 {
+1	""		Button_0
+2	""		Button_1
+3	""		GroupBox_0
+4	""		SingleSelListBox_0
+5	""		IconButton_0
+6	""		IconButton_1
+7	""		GroupBox_2
+8	""		Slider_0
+9	""		Icon_0
+10	""		Icon_1
+11	""		Icon_2
+12	""		GroupBox_3
+13	""		LeftText_0
+14	""		LeftText_1
+15	""		Icon_3
+16	""		Icon_4
+17	""		Icon_5
+18	""		Button_2
+19	""		LeftText_3
+20	""		GroupBox_4
+21	""		IconButton_2
+22	""		IconButton_3
+23	""		Icon_6
+}
+
+'GDLG' 32650 Modal			40		0		500		250		"JHP Wall Checker Setup" {
+/* [  1] */ Button			430		220		60		20		LargePlain	"Import"
+/* [  2] */ Button			430		195		60		20		LargePlain	"Cancel"
+/* [  3] */ LeftText		10		10		340		175		LargePlain	"Setup Decription"
+/* [  4] */ Icon			426		10		64		64		32600 /* JHP */
+}
+
+'DLGH'  32650  DLG_32650 {
+1	""		Button_0
+2	""		Button_1
+3	""		LeftText_0
+4	""		Icon_0
+}
+
+/////END WALL CHECKER DIALOGS**********
