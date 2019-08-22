@@ -186,7 +186,7 @@ GSErrCode __ACENV_CALL MenuCommandHandler(const API_MenuParams* menuParams)
 				}
 				else
 				{
-					std::strcat(message, " is NOT a verified user.");
+					std::strcat(message, " is NOT a user.");
 				}
 				ShowMessage(message);
 				break;
