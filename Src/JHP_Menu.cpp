@@ -195,10 +195,10 @@ GSErrCode __ACENV_CALL MenuCommandHandler(const API_MenuParams* menuParams)
 				char message[100] = "User ";
 				char* uname = (JHP_UserName());
 				std::strcat(message, uname);
-				if (CHCompareCStrings(uname, "CGilmer") == 0)
+				if ((CHCompareCStrings(uname, "CGilmer") == 0) || (CHCompareCStrings(uname, "CFranklin") == 0))
 				{
-					// std::strcat(message, " is a verified user.");
-					JHP_Entget();
+					std::strcat(message, " is a verified user.");
+					// JHP_Entget();
 					break;
 				}
 				else
