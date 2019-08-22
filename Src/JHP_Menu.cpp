@@ -175,46 +175,43 @@ GSErrCode __ACENV_CALL MenuCommandHandler(const API_MenuParams* menuParams)
 		case 32505: { /* DEV */
 			switch (menuParams->menuItemRef.itemIndex) {
 			case 1: {
-				char message[100] = "User ";
-				char* uname = (JHP_UserName());
-				std::strcat(message, uname);
-				if ((CHCompareCStrings(uname, "CGilmer") == 0) || (CHCompareCStrings(uname, "CFranklin") == 0))
+
+				//Can switch this char array to a GS::Unistring to allow easier comparison
+				//and str cat can be replaced with simple + operator.
+
+				GS::UniString message = "User ";
+				//message += JHP_UserName();
+				//message += " is not a verified user.";
+				
+
+				//char message[100] = "User ";
+				GS::UniString uname = (JHP_UserName());
+				//std::strcat(message, uname);
+				if (uname == "CGilmer" || uname == "CFranklin")
+				//if ((CHCompareCStrings(uname, "CGilmer") == 0) || (CHCompareCStrings(uname, "CFranklin") == 0))
 				{
-					std::strcat(message, " is a verified user.");
-					//JHP_Publish();
+					message += uname;
+					//std::strcat(message, " is a verified user.");
+					JHP_Publish();
 					break;
 				}
 				else
 				{
-					std::strcat(message, " is NOT a verified user.");
+					//std::strcat(message, " is NOT a verified user.");
+					message += " is NOT a verified user.";
 				}
-				ShowMessage(message);
+				//ShowMessage(message);
+				ACAPI_WriteReport(message, true);
 				break;
 			}
-			case 2: {
-				char message[100] = "User ";
-				char* uname = (JHP_UserName());
-				std::strcat(message, uname);
-				if ((CHCompareCStrings(uname, "CGilmer") == 0) || (CHCompareCStrings(uname, "CFranklin") == 0))
-				{
-					std::strcat(message, " is a verified user.");
-					// JHP_Entget();
-					break;
-				}
-				else
-				{
-					std::strcat(message, " is NOT a verified user.");
-				}
-				ShowMessage(message);
-				break;
-			}
+
 			}
 			break;
 		}
 
 		case 32506: /* HELP */
 		{
-			GS::UniString aboutMsg = "JHP Menu plugin\n\nVersion: %d\n\nQuarter: %s";
+			GS::UniString aboutMsg = "JHP Menu plugin\n\nArchicad Version: %d\n\nPlugin Version: %s";
 			//GS::UniString chrisMsg = "Call Chris Gilmer at:\n\ncell:  214.789.1097\nextension:  605";
 			switch (menuParams->menuItemRef.itemIndex) {
 			case 1:		JHP_Open(JHP_Link::SLACK_Archicad);											break;
@@ -265,8 +262,8 @@ GSErrCode __ACENV_CALL	RegisterInterface(void)
 	err = ACAPI_Register_Menu(32502, 0, MenuCode_UserDef, MenuFlag_Default); /*Links*/
 	err = ACAPI_Register_Menu(32503, 0, MenuCode_UserDef, MenuFlag_Default); /*Standards*/
 	err = ACAPI_Register_Menu(32504, 0, MenuCode_UserDef, MenuFlag_SeparatorAfter); /*Office*/
-	err = ACAPI_Register_Menu(32505, 0, MenuCode_UserDef, MenuFlag_Default); /*About*/
-	err = ACAPI_Register_Menu(32506, 0, MenuCode_UserDef, MenuFlag_Default); /*DevTools*/
+	err = ACAPI_Register_Menu(32505, 0, MenuCode_UserDef, MenuFlag_Default); /*DevTools*/
+	err = ACAPI_Register_Menu(32506, 0, MenuCode_UserDef, MenuFlag_Default); /*About*/
 
 	return err;
 }

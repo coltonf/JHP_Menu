@@ -78,12 +78,13 @@ void ShowMessage(char strMenuPick[])
 	MessageBox(0, strMenuPick, "Your choice...", MB_OK);
 }
 
-char* JHP_UserName()
+GS::UniString JHP_UserName()
 {
+	GS::UniString uniName;
 	static char name[UNLEN + 1];
 	DWORD size = UNLEN + 1;
 	GetUserName((TCHAR*)name, &size);
-	return name;
+	return uniName = name;
 }
 
 // Usage:  printf("Filename = %s\n", ExtractFileName("c:\\some\\dir\\hello.exe").c_str());
