@@ -173,7 +173,7 @@ GSErrCode JHP_Open(JHP_Link link);
 // ~~~~~~~~~~~~~~~
 // Dev Tools >
 // ~~~~~~~~~~~~~~~
-char* JHP_UserName(void);
+GS::UniString JHP_UserName(void);
 void JHP_Publish();
 std::string ExtractFileName(const std::string& fullPath);
 GSErrCode JHP_GetProp(const API_Guid& guid);

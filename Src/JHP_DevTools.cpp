@@ -4,6 +4,9 @@
 // Copy SOURCE .apx to USER .apx and create archive
 // ~~~~~~~~~~~~~~~
 
+char* CGilmer_Path = "O:\\CAD\\ArchiCAD\\Tools\\CG source\\JHP_Menu\\Build\\x64\\Release";
+char* CFranklin_Path = "D:\\ArchicadDevelopment\\Projects(Github)\\JHP_Menu\\Build\\x64\\Release";
+
 // Usage:  printf("Filename = %s\n", ExtractFileName("c:\\some\\dir\\hello.exe").c_str());
 void JHP_Publish()
 {
@@ -19,7 +22,10 @@ void JHP_Publish()
 	ofn.lpstrFile = szFileName;
 	ofn.nMaxFile = MAX_PATH;
 	ofn.Flags = OFN_EXPLORER | OFN_FILEMUSTEXIST | OFN_HIDEREADONLY;
-	ofn.lpstrInitialDir = "O:\\CAD\\ArchiCAD\\Tools\\CG source\\JHP_Menu\\Build\\x64\\Release";
+
+	if (JHP_UserName() == "CGilmer") { ofn.lpstrInitialDir = CGilmer_Path; }
+	if (JHP_UserName() == "CFranklin") { ofn.lpstrInitialDir = CFranklin_Path; }
+
 	ofn.lpstrDefExt = "apx";
 
 	if (GetOpenFileName(&ofn))
@@ -40,7 +46,7 @@ void JHP_Publish()
 		else
 		{
 			// Does exist.  Archive and copy if OK.
-			const int result = MessageBox(NULL, "Destination file already exists.\n\nDo you want to opverwrite?", "Confirm Overwrite", MB_YESNO | MB_DEFBUTTON2 | MB_ICONWARNING);
+			const int result = MessageBox(NULL, "Destination file already exists.\n\nDo you want to overwrite?", "Confirm Overwrite", MB_YESNO | MB_DEFBUTTON2 | MB_ICONWARNING);
 			switch (result)
 			{
 //			case IDYES:
