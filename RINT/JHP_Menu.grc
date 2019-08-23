@@ -61,7 +61,8 @@
 /* [   ] */			"JHP"
 /* [   ] */				"Help"
 /* [  1] */					"Slack^EL^EW^E3^E"
-/* [  2] */					"About^EL^EW^E3^E"
+/* [  2] */					"Docs^EL^EW^E3^E"
+/* [  3] */					"About^EL^EW^E3^E"
 }
 
 'STR#' ID_MENU_PROMPT_STRINGS "Status bar strings" {

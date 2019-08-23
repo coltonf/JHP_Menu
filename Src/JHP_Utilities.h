@@ -144,10 +144,11 @@ enum class JHP_Link
 	//Web Links
 	WEB_IBC = 5, 
 	WEB_UL = 6,
+	WEB_GITHELP = 7,
 
 	//Other "Open" Links
-	SLACK_Archicad = 7,
-	MSDN_APIDocs = 8,
+	SLACK_Archicad = 8,
+	MSDN_APIDocs = 9,
 
 	//File Locations (over 1000!)
 	LOC_Logos = 1001,
