@@ -35,6 +35,8 @@ const char* JHP_Links(JHP_Link link)
 		return "https://codes.iccsafe.org/content/IBC2018P2";
 	case JHP_Link::WEB_UL:
 		return "https://iq2.ulprospector.com/session/new?redirect=http%3a%2f%2fiq.ulprospector.com%2fen%2f";
+	case JHP_Link::WEB_GITHELP:
+		return "https://github.com/coltonf/JHP_Menu_Docs";
 
 	//OTHER OPEN LINKS*****
 	case JHP_Link::SLACK_Archicad:

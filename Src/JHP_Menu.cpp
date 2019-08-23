@@ -215,7 +215,8 @@ GSErrCode __ACENV_CALL MenuCommandHandler(const API_MenuParams* menuParams)
 			//GS::UniString chrisMsg = "Call Chris Gilmer at:\n\ncell:  214.789.1097\nextension:  605";
 			switch (menuParams->menuItemRef.itemIndex) {
 			case 1:		JHP_Open(JHP_Link::SLACK_Archicad);											break;
-			case 2:		ACAPI_WriteReport(aboutMsg, true, _JHPMENU_ARCHVERSION, _JHPMENU_VERSION);	break;
+			case 2:		JHP_Open(JHP_Link::WEB_GITHELP);											break;
+			case 3:		ACAPI_WriteReport(aboutMsg, true, _JHPMENU_ARCHVERSION, _JHPMENU_VERSION);	break;
 			default:																				break;
 			}
 			break;
